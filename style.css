@@ -24,7 +24,7 @@ body {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 30px;
   margin-bottom: 10px;
   color: #6a1b9a;
 }
@@ -47,7 +47,6 @@ p {
   border-radius: 20px;
   text-decoration: none;
   color: #6a1b9a;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
   width: 130px;
   font-size: 16px;
   transition: 0.3s ease-in-out;
@@ -62,14 +61,18 @@ p {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
-input {
+input[type="text"],
+input[type="date"],
+input[type="time"] {
   flex: 1;
   padding: 10px;
   border-radius: 10px;
   border: 1px solid #d1c4e9;
   font-size: 14px;
+  min-width: 120px;
 }
 
 button {
@@ -98,13 +101,22 @@ li {
   margin-bottom: 10px;
   border-radius: 10px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
 }
 
 li.completed {
   text-decoration: line-through;
   color: gray;
+}
+
+.reminder-datetime {
+  font-size: 12px;
+  color: #8e24aa;
+  background: #f3e5f5;
+  padding: 4px 8px;
+  border-radius: 8px;
 }
 
 .back {
@@ -119,30 +131,44 @@ li.completed {
   background: #fff0f7;
   padding: 20px;
   border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
   margin-top: 20px;
 }
 
 .habit-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-.habit-buttons button {
-  background-color: #f3e5f5;
-  color: #6a1b9a;
-  border: 1px solid #ce93d8;
-  border-radius: 10px;
-  padding: 10px 20px;
-  font-size: 14px;
-  cursor: pointer;
+.habit-btn {
+    padding: 8px 12px;
+    border: none;
+    background-color: #cea4d8;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition:ease-in-out;
 }
 
-.habit-buttons button.done {
-  background-color: #c8e6c9;
-  color: #2e7d32;
-  border-color: #81c784;
+.habit-btn:hover {
+    background-color: #e5e7eb;
+}
+
+.habit-btn.completed {
+    background-color: #34d399; 
+    color: white;
+}
+
+.delete-btn {
+    background-color: #f87171; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.delete-btn:hover {
+    background-color: #ef4444; 
 }
